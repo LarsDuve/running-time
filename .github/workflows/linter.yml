@@ -30,6 +30,7 @@ jobs:
         run: |
           composer install --prefer-dist --no-progress --no-ansi --no-interaction
           echo "${PWD}/vendor/bin" >> $GITHUB_PATH
+          composer global require "squizlabs/php_codesniffer=*"
 
       - name: Run linters
         uses: wearerequired/lint-action@v2
