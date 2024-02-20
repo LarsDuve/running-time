@@ -32,9 +32,13 @@ jobs:
           touch database/database.sqlite
           php artisan key:generate
           php artisan migrate
-
-      - name: Super-Linter
-        uses: super-linter/super-linter@v6.1.1
+          
+      - name: Run linters
+        uses: wearerequired/lint-action@v2
+        with:
+          php_codesniffer: true
+          # Optional: Ignore warnings
+          php_codesniffer_args: "-n"
 
       - name: Run Testsuite
         run: vendor/bin/phpunit tests/
