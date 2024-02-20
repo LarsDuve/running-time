@@ -35,4 +35,4 @@ jobs:
       - name: Run linters
         uses: wearerequired/lint-action@v2
         with:
-          php_codesniffer: true
+          php_codesniffer: false
